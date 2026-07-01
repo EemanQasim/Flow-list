@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowlist</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none">
+        <path d="M3 20c3-6 6 6 9 0s6-6 9 0 6 6 8 0" stroke="url(#lg)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <defs><linearGradient id="lg" x1="3" y1="16" x2="29" y2="16"><stop stop-color="#2D8F82"/><stop offset="1" stop-color="#5EEAD4"/></linearGradient></defs>
+      </svg>
+      <div class="brand-name">Flow<em>list</em></div>
+    </div>
+    <nav class="nav" id="navList"></nav>
+    <div class="sidebar-foot">
+      <div class="mini-progress">
+        <div class="mini-progress-top">
+          <span class="mini-progress-label">Completed today</span>
+          <span class="mini-progress-val" id="miniProgressVal">0%</span>
+        </div>
+        <div class="mini-bar"><div class="mini-bar-fill" id="miniProgressFill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="app-main">
+    <div class="topbar">
+      <div style="display:flex;gap:14px;align-items:flex-start;">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div>
+          <div class="topbar-title" id="topbarTitle">Dashboard</div>
+          <div class="topbar-sub" id="topbarSub"></div>
+        </div>
+      </div>
+      <div class="topbar-actions" id="topbarActions"></div>
+    </div>
+
+    <div class="flow-divider">
+      <svg viewBox="0 0 1000 14" preserveAspectRatio="none">
+        <path id="flowPath" d="M0 7 Q 25 0 50 7 T 100 7 T 150 7 T 200 7 T 250 7 T 300 7 T 350 7 T 400 7 T 450 7 T 500 7 T 550 7 T 600 7 T 650 7 T 700 7 T 750 7 T 800 7 T 850 7 T 900 7 T 950 7 T 1000 7"
+          fill="none" stroke="url(#flowGrad)" stroke-width="2" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="flowGrad" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="var(--accent-dim)"/>
+            <stop offset="1" id="flowGradEnd" stop-color="var(--border)"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <main id="mainContent"></main>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
